@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <header class="page-header">
+        <h1 class="page-title">My Account</h1>
+      </header>
+      <div class="box-lg">
+        <div class="row" data-gutter="60">
+          <div class="col-md-6">
+            <h3 class="widget-title">Sign in</h3>
+            <form [formGroup] = "signupForm" (ngSubmit)="onSubmit()" >
+              <div class="form-group">
+                <label>E-mail</label>
+                <input class="form-control" type="email" formControlName="email"/>
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" formControlName="password" />
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input class="i-check" type="checkbox" />Remember me</label>
+              </div>
+              <input class="btn btn-primary" type="submit" [disabled]="signupForm.status === 'INVALID'" />
+              <div *ngIf="error" class="alert alert-danger mt-3 mb-0">Invalid email or password</div>
+
+            </form>
+            <br /><a href="#">Forgot Your Password?</a>
+          </div>
+          <div class="col-md-6">
+            <h3 class="widget-title">Create Account</h3>
+            <form (ngSubmit)="onSubmitRegister(f2)" #f2="ngForm">
+
+              <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" type="text" ngModel required name="name"/>
+              </div>
+
+              <div class="form-group">
+                <label>E-mail</label>
+                <input class="form-control" type="email" ngModel required name="emailRegister"/>
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" type="password" ngModel required name="password1" />
+              </div>
+              <div class="form-group">
+                <label>Repeat Password</label>
+                <input class="form-control" type="password" ngModel required name="password2"/>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input class="i-check" type="checkbox" />Sign Up to the Newsletter</label>
+              </div>
+              <input class="btn btn-primary" type="submit" value="Create Account" />
+              <div *ngIf="errorMatch" class="alert alert-danger mt-3 mb-0">Password and confirm password does not match.</div>
+              <div *ngIf="emailExists" class="alert alert-danger mt-3 mb-0">Email already exists.</div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="gap gap-small"></div>
+
+
+<app-footer></app-footer>

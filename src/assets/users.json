@@ -1,0 +1,16 @@
+{
+  "users":[
+    {
+      "id": 1,
+      "name": "Amine Hayder",
+      "email":"amine.hayder@gmail.com",
+      "password":"hayder123"
+    },
+    {
+      "id": 2,
+      "name": "Imen Kaouane",
+      "email":"imen.kaouane@gmail.com",
+      "password":"imen123"
+    }
+]
+}

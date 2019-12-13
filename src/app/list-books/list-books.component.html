@@ -1,0 +1,143 @@
+<app-navbar></app-navbar>
+
+
+<div class="container">
+  <notifier-container></notifier-container>
+
+  <header class="page-header">
+    <h1 class="page-title">Books</h1>
+    <ol class="breadcrumb page-breadcrumb">
+      <li><a href="#">Home</a>
+      </li>
+      <li><a href="#">Electronics</a>
+      </li>
+      <li class="active">Laptops</li>
+    </ol>
+    <ul class="category-selections clearfix">
+      <li>
+        <a class="fa fa-th-large category-selections-icon" href="#"></a>
+      </li>
+      <li>
+        <a class="fa fa-th-list category-selections-icon active" href="#"></a>
+      </li>
+      <li><span class="category-selections-sign">Sort by :</span>
+        <select class="category-selections-select">
+          <option selected>Newest First</option>
+          <option>Best Sellers</option>
+          <option>Trending Now</option>
+          <option>Best Raited</option>
+          <option>Price : Lowest First</option>
+          <option>Price : Highest First</option>
+          <option>Title : A - Z</option>
+          <option>Title : Z - A</option>
+        </select>
+      </li>
+      <li><span class="category-selections-sign">Items :</span>
+        <select class="category-selections-select">
+          <option>9 / page</option>
+          <option selected>12 / page</option>
+          <option>18 / page</option>
+          <option>All</option>
+        </select>
+      </li>
+    </ul>
+  </header>
+  <div class="row">
+    <div class="col-md-3">
+      <aside class="category-filters">
+        <div class="category-filters-section">
+          <h3 class="widget-title-sm">Price</h3>
+          <input type="text" id="price-slider" />
+        </div>
+
+        <div class="category-filters-section">
+          <h3 class="widget-title-sm">Features</h3>
+          <div class="checkbox">
+            <label>
+              <input class="i-check" type="checkbox" />New<span class="category-filters-amount">(96)</span>
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input class="i-check" type="checkbox" />Featured<span class="category-filters-amount">(60)</span>
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input class="i-check" type="checkbox" />On Sale<span class="category-filters-amount">(19)</span>
+            </label>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="col-md-9">
+      <div class="row" data-gutter="15" *ngFor=" let book of myBooks">
+        <div class="col-md-12">
+          <div class="product product-left ">
+            <ul class="product-labels">
+              <li>-20%</li>
+            </ul>
+            <div class="product-img-wrap">
+              <img class="product-img-primary" src="{{book.image}}" alt="Image Alternative text" title="Image Title" />
+              <img class="product-img-alt" src="{{book.image}}" alt="Image Alternative text" title="Image Title" />
+            </div>
+            <a class="product-link" href="#"></a>
+            <ul class="product-actions">
+              <li (click)="addToShoppingBag(book)"><a class="btn btn-primary btn-lg" ><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+              </li>
+              <li><a class="btn btn-default" href="#"><i class="fa fa-star"></i> to Wishlist</a>
+              </li>
+            </ul>
+            <div class="product-caption">
+              <ul class="product-caption-rating">
+                <li class="rated"><i class="fa fa-star"></i>
+                </li>
+                <li class="rated"><i class="fa fa-star"></i>
+                </li>
+                <li class="rated"><i class="fa fa-star"></i>
+                </li>
+                <li class="rated"><i class="fa fa-star"></i>
+                </li>
+                <li class="rated"><i class="fa fa-star"></i>
+                </li>
+              </ul>
+              <h5 class="product-caption-title">{{book.description}}</h5>
+              <div class="product-caption-price"><span class="product-caption-price-old">$66</span><span class="product-caption-price-new">{{book.price}}</span>
+              </div>
+              <ul class="product-caption-feature-list">
+                <li>Free Shipping</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <p class="category-pagination-sign">58 items found in Cell Phones. Showing 1 - 12</p>
+        </div>
+        <div class="col-md-6">
+          <nav>
+            <ul class="pagination category-pagination pull-right">
+              <li class="active"><a href="#">1</a>
+              </li>
+              <li><a href="#">2</a>
+              </li>
+              <li><a href="#">3</a>
+              </li>
+              <li><a href="#">4</a>
+              </li>
+              <li><a href="#">5</a>
+              </li>
+              <li class="last"><a href="#"><i class="fa fa-long-arrow-right"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="gap"></div>
+
+<app-footer></app-footer>

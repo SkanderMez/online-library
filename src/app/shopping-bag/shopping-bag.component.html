@@ -1,0 +1,71 @@
+
+<app-navbar></app-navbar>
+
+<app-empty-shopping-bag *ngIf="empty"></app-empty-shopping-bag>
+
+<div *ngIf="!empty">
+  <div class="container">
+    <header class="page-header">
+      <h1 class="page-title">My Shopping Bag</h1>
+    </header>
+    <div class="row">
+      <div class="col-md-10">
+        <table class="table table table-shopping-cart">
+          <thead>
+          <tr>
+            <th>Product</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Remove</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let book of myBooks;let i = index">
+            <td class="table-shopping-cart-img">
+              <a href="#">
+                <img src="{{book.image}}" alt="Image Alternative text" title="Image Title" />
+              </a>
+            </td>
+            <td class="table-shopping-cart-title"><a >{{book.title}}</a>
+            </td>
+            <td>{{book.price}}</td>
+            <td>
+              <input class="form-control table-shopping-qty" type="text" value="{{book.quantity}}" />
+            </td>
+            <td>{{book.quantity * book.price}}</td>
+            <td>
+              <a (click)="removeBook(i)" class="fa fa-close table-shopping-remove" ></a>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+        <div class="gap gap-small"></div>
+      </div>
+      <div class="col-md-2">
+        <ul class="shopping-cart-total-list">
+          <li><span>Subtotal</span><span>74 TN</span>
+          </li>
+          <li><span>Shopping</span><span>Free</span>
+          </li>
+          <li><span>Taxes</span><span>$0</span>
+          </li>
+          <li><span>Total</span><span>74 TN</span>
+          </li>
+        </ul><a class="btn btn-primary" href="#">Checkout</a>
+      </div>
+    </div>
+    <ul class="list-inline">
+      <li><a class="btn btn-default" href="#">Continue Shopping</a>
+      </li>
+      <li><a class="btn btn-default" href="#">Update Bag</a>
+      </li>
+    </ul>
+  </div>
+  <div class="gap"></div>
+</div>
+
+
+<app-footer></app-footer>

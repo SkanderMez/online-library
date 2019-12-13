@@ -24,9 +24,40 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/bootstrap.css",
+              "src/assets/css/font-awesome.css",
+              "src/assets/css/mystyles.css",
+              "src/assets/css/styles.css",
+              "src/assets/css/switcher.css",
+              "src/assets/css/schemes/brick-red.css",
+              "src/assets/css/schemes/bright-turquoise.css",
+              "src/assets/css/schemes/cerise.css",
+              "src/assets/css/schemes/de-york.css",
+              "src/assets/css/schemes/denim.css",
+              "src/assets/css/schemes/green-smoke.css",
+              "src/assets/css/schemes/hippie-blue.css",
+              "src/assets/css/schemes/horizon.css",
+              "src/assets/css/schemes/leather.css",
+              "src/assets/css/schemes/mandy.css",
+              "src/assets/css/schemes/salem.css",
+              "src/assets/css/schemes/scarlet.css",
+              "src/assets/css/schemes/shamrock.css",
+              "src/assets/css/schemes/studio.css",
+              "src/assets/css/schemes/turkish-rose.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery.js",
+              "src/assets/js/bootstrap.js",
+              "src/assets/js/icheck.js",
+              "src/assets/js/ionrangeslider.js",
+              "src/assets/js/jqzoom.js",
+              "src/assets/js/card-payment.js",
+              "src/assets/js/owl-carousel.js",
+              "src/assets/js/magnific.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/switcher.js"
+            ]
           },
           "configurations": {
             "production": {

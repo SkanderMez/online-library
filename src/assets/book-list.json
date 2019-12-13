@@ -1,0 +1,113 @@
+{
+  "books":[
+    {
+      "id":1,
+      "title": "Harry Potter and the Chamber of Secrets",
+      "description":"The plot follows Harry's second year at Hogwarts School of Witchcraft and Wizardry, during which a series of messages on the walls of the school's corridors warn that the \"Chamber of Secrets\" has been opened and that the \"heir of Slytherin\" would kill all pupils who do not come from all-magical families." ,
+      "price":40,
+      "image":"assets/img/books/b1.jpg",
+      "quantity":35,
+      "author": "J. K. Rowling"
+    },
+    {
+      "id":2,
+      "title": "After",
+      "description":"The After series is a New Adult series of four books that tell the love story between a straight-laced college freshman, Tessa, and an emotionally damaged young man named Hardin who is filled with so much anger and hate for himself and the world around him that it affects his every relationship" ,
+      "price":34,
+      "image":"assets/img/books/b2.jpg",
+      "quantity":24,
+      "author": "Anna Todd"
+    },
+    {
+      "id": 3,
+      "title": "In Search of Lost Time",
+      "description": "Swann's Way, the first part of A la recherche de temps perdu, Marcel Proust's seven-part cycle, was published in 1913. In it, Proust introduces the themes that run through the entire work. The narrator recalls his childhood, aided by the famous madeleine; and describes M. Swann's passion for Odette. The work is incomparable. Edmund Wilson said \"[Proust] has supplied for the first time in literature an equivalent in the full scale for the new theory of modern physics.",
+      "price": 14,
+      "image": "assets/img/books/b3.jpg",
+      "quantity": 14,
+      "author": "Marcel Proust"
+    },
+    {
+      "id":4,
+      "title": "Ulysses",
+      "description": "Ulysses chronicles the passage of Leopold Bloom through Dublin during an ordinary day, June 16, 1904. The title parallels and alludes to Odysseus (Latinised into Ulysses), the hero of Homer's Odyssey (e.g., the correspondences between Leopold Bloom and Odysseus, Molly Bloom and Penelope, and Stephen Dedalus and Telemachus). Joyce fans worldwide now celebrate June 16 as Bloomsday.",
+      "price":84,
+      "image":"assets/img/books/b4.jpg",
+      "quantity":14,
+      "author": " James Joycet"
+    },
+    {
+      "id":5,
+      "title": "Don Quixote",
+      "description": "Alonso Quixano, a retired country gentleman in his fifties, lives in an unnamed section of La Mancha with his niece and a housekeeper. He has become obsessed with books of chivalry, and believes their every word to be true, despite the fact that many of the events in them are clearly impossible. Quixano eventually appears to other people to have lost his mind from little sleep and food and because of so much reading.",
+      "price":64,
+      "image":"assets/img/books/b5.jpg",
+      "quantity":14,
+      "author": " Miguel de Cervantes"
+    },
+    {
+      "id":6,
+      "title": " The Great Gatsby ",
+      "description": "The novel chronicles an era that Fitzgerald himself dubbed the Jazz Age. Following the shock and chaos of World War I, American society enjoyed unprecedented levels of prosperity during the \"roaring\" 1920s as the economy soared. At the same time, Prohibition, the ban on the sale and manufacture of alcohol as mandated by the Eighteenth Amendment, made millionaires out of bootleggers and led to an increase in organized crime, for example the Jewish mafia. Although Fitzgerald, like Nick Carraway in his novel, idolized the riches and glamor of the age, he was uncomfortable with the unrestrained materialism and the lack of morality that went with it, a kind of decadence.",
+      "price":8,
+      "image":"assets/img/books/b6.jpg",
+      "quantity":14,
+      "author": "F. Scott Fitzgerald"
+    },
+    {
+      "id":7,
+      "title": " Moby Dick ",
+      "description": "First published in 1851, Melville's masterpiece is, in Elizabeth Hardwick's words, \"the greatest novel in American literature.\" The saga of Captain Ahab and his monomaniacal pursuit of the white whale remains a peerless adventure story but one full of mythic grandeur, poetic majesty, and symbolic power. Filtered through the consciousness of the novel's narrator, Ishmael, Moby-Dick draws us into a universe full of fascinating characters and stories, from the noble cannibal Queequeg to the natural history of whales, while reaching existential depths that excite debate and contemplation to this day.",
+      "price":12,
+      "image":"assets/img/books/b7.jpg",
+      "quantity":14,
+      "author": "Herman Melville"
+    },
+    {
+      "id":8,
+      "title": "The Odyssey",
+      "description": "The Odyssey is one of two major ancient Greek epic poems attributed to Homer. It is, in part, a sequel to the Iliad, the other work traditionally ascribed to Homer. The poem is fundamental to the modern Western canon. Indeed it is the second—the Iliad being the first—extant work of Western literature. It was probably composed near the end of the eighth century BC, somewhere in Ionia, the Greek-speaking coastal region of what is now Turkey. The poem mainly centers on the Greek hero Odysseus (or Ulysses, as he was known in Roman myths) and his long journey home following the fall of Troy. It takes Odysseus ten years to reach Ithaca after the ten-year Trojan War. In his absence, it is assumed he has died, and his wife Penelope and son Telemachus must deal with a group of unruly suitors, the Mnesteres or Proci, competing for Penelope's hand in marriage.",
+      "price":120,
+      "image":"assets/img/books/b8.jpg",
+      "quantity":14,
+      "author": "Homer"
+    },
+    {
+      "id":9,
+      "title": " The Divine Comedy",
+      "description": "Belonging in the immortal company of the great works of literature, Dante Alighieri's poetic masterpiece, The Divine Comedy, is a moving human drama, an unforgettable visionary journey through the infinite torment of Hell, up the arduous slopes of Purgatory, and on to the glorious realm of Paradise — the sphere of universal harmony and eternal salvation.",
+      "price":65,
+      "image":"assets/img/books/b9.jpg",
+      "quantity":14,
+      "author": " Dante Alighieri"
+    },
+    {
+      "id":10,
+      "title": "Pride and Prejudice",
+      "description": "The book is narrated in free indirect speech following the main character Elizabeth Bennet as she deals with matters of upbringing, marriage, moral rightness and education in her aristocratic society. Though the book's setting is uniquely turn of the 19th century, it remains a fascination of modern readership, continuing to remain at the top of lists titled \"most loved books of all time\", and receiving considerable attention from literary critics. This modern interest has resulted in a number of dramatic adaptations and a plethora of books developing Austen's memorable characters further.",
+      "price":45,
+      "image":"assets/img/books/b10.jpg",
+      "quantity":14,
+      "author": "Jane Austen"
+    },
+    {
+      "id":11,
+      "title": "To the Lighthouse",
+      "description": "A landmark novel of high modernism, the text, centering on the Ramsay family and their visits to the Isle of Skye in Scotland between 1910 and 1920, skillfully manipulates temporality and psychological exploration. The novel includes little dialogue and almost no action; most of it is written as thoughts and observations. The novel recalls the power of childhood emotions and highlights the impermanence of adult relationships. Among the book's many tropes and themes are those of loss, subjectivity, and the problem of perception.",
+      "price":24,
+      "image":"assets/img/books/b11.jpg",
+      "quantity":14,
+      "author": "Virginia Woolf"
+    },
+    {
+      "id":12,
+      "title": "Book 12",
+      "description": "A landmark novel of high modernism, the text, centering on the Ramsay family and their visits to the Isle of Skye in Scotland between 1910 and 1920, skillfully manipulates temporality and psychological exploration. The novel includes little dialogue and almost no action; most of it is written as thoughts and observations. The novel recalls the power of childhood emotions and highlights the impermanence of adult relationships. Among the book's many tropes and themes are those of loss, subjectivity, and the problem of perception.",
+      "price":24,
+      "image":"assets/img/books/b11.jpg",
+      "quantity":14,
+      "author": "Virginia Woolf"
+    }
+  ]
+
+}
