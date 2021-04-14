@@ -21,12 +21,12 @@ export class HomeComponent implements OnInit, AfterViewInit, AfterViewInit {
     });
 
     this.httpClient.get('assets/book-list.json').subscribe(
-      (data) => {
-      console.log(data);
+      (data: any) => {
       let i;
       for (i = 0; i < data.books.length; i++) {
           this.myBooks.push(data.books[i]);
-        }},
+        }
+      },
       (error) => {
         console.log(error);
       });

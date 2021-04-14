@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {CartService} from '../cart.service';
 import {Router} from '@angular/router';
 import {NotifierService} from 'angular-notifier';
+import {BooksService} from '../_services/books.service';
+import {BASE_API, PICTURES} from '../_globals/vars';
 
 @Component({
   selector: 'app-list-books',
@@ -14,34 +16,41 @@ export class ListBooksComponent implements OnInit {
 
   myBooks = [];
   connected: boolean;
+  BASE_API = BASE_API;
+  PICTURES = PICTURES;
+
   constructor(private http: HttpClient,
               private cartService: CartService,
               private router: Router,
-              private notifierService: NotifierService) {
+              private notifierService: NotifierService,
+              private booksService: BooksService) {
+
+  }
+  getAllBooks() {
+    this.booksService.getAllBooks().subscribe(
+      (books: any) => {
+        this.myBooks = books;
+        console.log(BASE_API + PICTURES + this.myBooks[61].fileStorageProperties.uploadDir);
+      }, (error) => {
+        console.log(error);
+      }, () => {
+      }
+    );
   }
 
   ngOnInit() {
-    this.http.get('assets/book-list.json').subscribe(
-      (data) => {
-        console.log(data);
-        let i;
-        for (i = 0; i < data.books.length; i++) {
-          this.myBooks.push(data.books[i]);
-        }
-      },
-      (error) => {
-        console.log(error);
-      });
+    this.getAllBooks();
   }
 
+
   addToShoppingBag(book: any) {
-    if (localStorage.getItem('user') === null) {
+    if (localStorage.getItem('currentUser') === null) {
       this.router.navigate(['/sign-in']);
 
     } else {
       this.connected = true;
     }
-    this.cartService.addToCart(book , book.quantity , book.price);
+    this.cartService.addToCart(book , 1 , book.price);
 
     this.notifierService.show({
       type: 'success',

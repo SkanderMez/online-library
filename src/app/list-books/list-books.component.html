@@ -9,16 +9,16 @@
     <ol class="breadcrumb page-breadcrumb">
       <li><a href="#">Home</a>
       </li>
-      <li><a href="#">Electronics</a>
+      <li><a href="#">Culture</a>
       </li>
-      <li class="active">Laptops</li>
+      <li class="active">Books</li>
     </ol>
     <ul class="category-selections clearfix">
       <li>
         <a class="fa fa-th-large category-selections-icon" href="#"></a>
       </li>
       <li>
-        <a class="fa fa-th-list category-selections-icon active" href="#"></a>
+        <a class="fa fa-th-list category-selections-icon active" ></a>
       </li>
       <li><span class="category-selections-sign">Sort by :</span>
         <select class="category-selections-select">
@@ -78,8 +78,8 @@
               <li>-20%</li>
             </ul>
             <div class="product-img-wrap">
-              <img class="product-img-primary" src="{{book.image}}" alt="Image Alternative text" title="Image Title" />
-              <img class="product-img-alt" src="{{book.image}}" alt="Image Alternative text" title="Image Title" />
+              <img class="product-img-primary" src="{{BASE_API + PICTURES + '/' + book?.fileStorageProperties?.uploadDir}}" alt="Image Alternative text" title="Image Title" />
+              <img class="product-img-alt" src="{{BASE_API + PICTURES + '/' +  book?.fileStorageProperties?.uploadDir}}" alt="Image Alternative text" title="Image Title" />
             </div>
             <a class="product-link" href="#"></a>
             <ul class="product-actions">

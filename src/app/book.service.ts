@@ -10,7 +10,7 @@ export class BookService {
 
   getAllBooks() {
     this.httpClient.get('assets/book-list.json').subscribe(
-      (data) => {
+      (data: any) => {
       return data.books;
       },
       (error) => {

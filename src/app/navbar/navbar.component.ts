@@ -13,16 +13,17 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    if (localStorage.getItem('user') === null) {
+    if (localStorage.getItem('currentUser') === null) {
       this.connected = false;
     } else {
-      this.userName = localStorage.getItem('user');
+
+      this.userName = JSON.parse(localStorage.getItem('currentUser')).username;
       this.connected = true;
     }
   }
 
   SignOut() {
-    localStorage.removeItem('user');
+    localStorage.removeItem('currentUser');
     this.router.navigate(['/sign-in']);
   }
 }

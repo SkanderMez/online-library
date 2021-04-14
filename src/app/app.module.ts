@@ -11,9 +11,20 @@ import { ListBooksComponent } from './list-books/list-books.component';
 import { LoginRegisterComponent } from './login-register/login-register.component';
 import { ShoppingBagComponent } from './shopping-bag/shopping-bag.component';
 import { EmptyShoppingBagComponent } from './empty-shopping-bag/empty-shopping-bag.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NotifierModule} from 'angular-notifier';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UserAddComponent } from './user/user-add/user-add.component';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import {en_US, NgZorroAntdModule, NZ_I18N} from 'ng-zorro-antd';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {JwtInterceptor} from './_interceptors/jwt.interceptor';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { AddBookComponent } from './add-book/add-book.component';
+import { OrderListComponent } from './order-list/order-list.component';
+registerLocaleData(en);
 
 @NgModule({
   declarations: [
@@ -25,7 +36,12 @@ import {NotifierModule} from 'angular-notifier';
     ListBooksComponent,
     LoginRegisterComponent,
     ShoppingBagComponent,
-    EmptyShoppingBagComponent
+    EmptyShoppingBagComponent,
+    UserListComponent,
+    UserAddComponent,
+    SignUpComponent,
+    AddBookComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +49,14 @@ import {NotifierModule} from 'angular-notifier';
     HttpClientModule,
     FormsModule,
     NotifierModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgZorroAntdModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ],
+  providers: [
+    { provide: NZ_I18N, useValue: en_US},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+]
 })
 export class AppModule { }

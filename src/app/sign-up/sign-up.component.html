@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<body>
+<div class="main">
+
+  <section class="signup">
+
+    <div class="container">
+      <div class="signup-content">
+        <form [formGroup] = "signupForm" (ngSubmit)="onSubmit()">
+          <h2 class="form-title">Create account</h2>
+          <div class="form-group">
+            <input type="text" class="form-input" formControlName="username" placeholder="Your Name"/>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-input" formControlName="password" placeholder="Password"/>
+            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-input" formControlName="confirmPassword" placeholder="Confirm Password"/>
+            <span class="zmdi zmdi-eye field-icon toggle-password"></span>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+          </div>
+          <div class="form-group">
+            <input [disabled]="!checkPasswordValidity() || !signupForm.controls.username.dirty || !signupForm.controls.password.dirty" type="submit" class="form-submit" value="Sign in"/>
+          </div>
+        </form>
+        <p class="loginhere">
+          Have already an account ? <a routerLink="/sign-in" class="loginhere-link">Login here</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+<app-footer></app-footer>

@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<header class="page-header">
+  <h2 style="text-align: center">Users</h2>
+</header>
+
+<nz-table #nzTable [nzData]="listOfDisplayData">
+  <thead>
+
+  <tr>
+    <th>Id</th>
+
+    <th nzCustomFilter>
+      Username
+      <i
+        nz-th-extra
+        class="ant-table-filter-icon"
+        nz-icon
+        nz-dropdown
+        #dropdown="nzDropdown"
+        nzType="search"
+        [nzDropdownMenu]="menu"
+        [class.ant-table-filter-open]="dropdown.nzVisible"
+        nzTrigger="click"
+        nzPlacement="bottomRight"
+        [nzClickHide]="false"
+        nzTableFilter
+      ></i>
+    </th>
+    <th>Role</th>
+    <th>Creation Date</th>
+    <th>Updated Date</th>
+    <th>Action</th>
+<!--    <th nzShowFilter [nzFilters]="listOfFilterAddress" (nzFilterChange)="filterAddressChange($event)">Address</th>-->
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of nzTable.data">
+    <td>{{ data.id }}</td>
+    <td>{{ data.username }}</td>
+    <td>{{ data.role }}</td>
+    <td>{{ data.creationDate }}</td>
+    <td>{{ data.updatedDate }}</td>
+    <td>
+      <a nz-popconfirm nzTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.id)">Delete</a>
+    </td>
+
+  </tr>
+  </tbody>
+</nz-table>
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <div class="search-box">
+    <input type="text" nz-input placeholder="Search name" [(ngModel)]="searchValue" />
+    <button nz-button nzSize="small" nzType="primary" (click)="search()" class="search-button">
+      Search
+    </button>
+    <button nz-button nzSize="small" (click)="reset()">Reset</button>
+  </div>
+</nz-dropdown-menu>
+<app-footer></app-footer>

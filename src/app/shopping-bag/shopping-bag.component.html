@@ -25,14 +25,14 @@
           <tr *ngFor="let book of myBooks;let i = index">
             <td class="table-shopping-cart-img">
               <a href="#">
-                <img src="{{book.image}}" alt="Image Alternative text" title="Image Title" />
+                <img src="{{BASE_API + PICTURES + '/' + book?.product?.fileStorageProperties?.uploadDir}}" alt="Image Alternative text" title="Image Title" />
               </a>
             </td>
-            <td class="table-shopping-cart-title"><a >{{book.title}}</a>
+            <td class="table-shopping-cart-title"><a >{{book?.product?.name}}</a>
             </td>
             <td>{{book.price}}</td>
             <td>
-              <input class="form-control table-shopping-qty" type="text" value="{{book.quantity}}" />
+              <input width="200px" class="form-control table-shopping-qty" type="text" value="{{book.quantity}}" />
             </td>
             <td>{{book.quantity * book.price}}</td>
             <td>
@@ -54,7 +54,7 @@
           </li>
           <li><span>Total</span><span>74 TN</span>
           </li>
-        </ul><a class="btn btn-primary" href="#">Checkout</a>
+        </ul><a class="btn btn-primary"(click)="submitOrder()">Checkout</a>
       </div>
     </div>
     <ul class="list-inline">

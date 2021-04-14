@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Form, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
+import {Form, FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {equal} from 'assert';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthenticationService} from '../_services/authentication.service';
+import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-login-register',
@@ -13,76 +15,58 @@ export class LoginRegisterComponent implements OnInit {
 
   myUsers = [];
   error = false;
-  errorMatch = false;
-  emailExists = false;
-  signupForm: FormGroup;
+  loginForm: FormGroup;
+  returnUrl: string;
+  errorFound = false;
+  submitted = false;
 
 
-  constructor(private http: HttpClient,
-              private router: Router) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private authenticationService: AuthenticationService) {
+
+
+  }
 
 
 
 
   ngOnInit() {
-
-    this.signupForm = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null)
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
     });
-    console.log(this.signupForm);
-    this.getAllUsers();
+
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
+
   }
 
-  getAllUsers() {
-    this.http.get('assets/users.json').subscribe(
-      (data) => {
-        console.log(data);
-        let i;
-        for (i = 0; i < data.users.length; i++) {
-          this.myUsers.push(data.users[i]);
-        }},
-      (error) => {
-        console.log(error);
-      });
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.loginForm.controls;
   }
-
   onSubmit() {
-    let i;
-    for (i = 0; i < this.myUsers.length; i++) {
-      console.log(this.myUsers[i]);
-      if (this.myUsers[i].email === this.signupForm.controls.email.value && this.myUsers[i].password === this.signupForm.controls.password.value) {
-          localStorage.setItem('user', this.myUsers[i].name);
-          this.router.navigate(['/']);
-          break;
-      } else {
-          this.error = true;
-      }
-    }
+    this.errorFound = false;
+    this.submitted = true;
+
+    this.authenticationService.login(this.f.username.value, this.f.password.value)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.router.navigate([this.returnUrl]);
+        },
+        error => {
+          this.loginForm.reset(this.f.username.value);
+          this.error = error;
+          this.errorFound = true;
+          this.submitted = false;
+
+        }, () => {
+        });
   }
 
-  onSubmitRegister(f: NgForm) {
-    let i;
-    for (i = 0; i < this.myUsers.length; i++) {
-      if (f.value.emailRegister === this.myUsers[i].email){
-        this.emailExists = true;
-      }
-    }
-    if (!(f.value.password1 === f.value.password2)){
-      this.errorMatch = true;
-    }
-
-    const parameter = JSON.stringify({type: 'users', name: f.value.name, email: f.value.email, password: f.value.password1});
-
-    this.http.post('assets/users.json', parameter).subscribe(
-      (data) => {
-        console.log(data);
-        //this.router.navigate(['/']);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
 
 }

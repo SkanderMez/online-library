@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div id="custom">
+  <div class="main">
+
+    <section class="signup">
+      <notifier-container></notifier-container>
+
+      <div class="container">
+        <div class="signup-content">
+          <form [formGroup] = "productForm" (ngSubmit)="onSubmit()">
+            <h2 class="form-title">Add product</h2>
+            <div class="form-group">
+              <input type="text" class="form-input" formControlName="name"  placeholder="Product Name"/>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Description" formControlName="description" class="form-input"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-input" formControlName="price" placeholder="price"/>
+              <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+            </div>
+
+            <div class="form-group">
+
+              <input (change)="updateFileVar($event)" type="file" class="form-input" formControlName="file" placeholder="pictureUrl"/>
+            </div>
+
+            <div class="form-group">
+              <input  type="submit" class="form-submit" value="Add product"/>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<app-footer></app-footer>
